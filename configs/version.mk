@@ -9,3 +9,10 @@ export ROM_VERSION := $(VERSION)-$(shell date -u +%Y%m%d)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.modversion=$(ROM_VERSION) \
     ro.$(VENDOR).version=$(VERSION)
+
+# goo.im properties
+PRODUCT_PROPERTY_OVERRIDES += \
+      ro.goo.developerid=Kayant\
+      ro.goo.rom=paranoidandroid \
+      ro.goo.version=$(shell date +%s)
+
