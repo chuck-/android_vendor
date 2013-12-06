@@ -14,7 +14,11 @@
 
 PRODUCT_PACKAGES += \
     Busybox \
-    Lightbulb
+    Lightbulb \
+	lsof \
+	e2fsck \
+	mke2fs \
+	tune2fs 
 
 # Source or prebuilt PA-prefs logic
 #ifneq ($(PREFS_FROM_SOURCE),true)
