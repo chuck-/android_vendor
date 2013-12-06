@@ -27,6 +27,9 @@ PREFS_FROM_SOURCE := false
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
 
+# languages
+PRODUCT_LOCALES := en_US en_GB en_IN fr_FR it_IT de_DE es_ES hu_HU uk_UA zh_CN zh_TW ru_RU nl_NL se_SV cs_CZ pl_PL pt_BR da_DK ko_KR
+
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
