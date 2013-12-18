@@ -14,7 +14,7 @@
 
 # Check for target product
 
-ifeq (pa_d2att,$(TARGET_PRODUCT))
+ifeq (pa_ls980,$(TARGET_PRODUCT))
 
 # Define PA bootanimation size
 PARANOID_BOOTANIMATION_NAME := XHDPI
@@ -32,18 +32,13 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/d2att/full_d2att.mk)
+$(call inherit-product, device/lge/ls980/ls980.mk)
 
-# Override AOSP build properties
-PRODUCT_NAME := pa_d2att
-PRODUCT_DEVICE := d2att
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SGH-I747
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=d2uc \
-    TARGET_DEVICE=d2att \
-    BUILD_FINGERPRINT="samsung/d2uc/d2att:4.1.1/JRO03L/I747UCDLK3:user/release-keys" \
-    PRIVATE_BUILD_DESC="d2uc-user 4.1.1 JRO03L I747UCDLK3 release-keys"
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := ls980
+PRODUCT_NAME := pa_ls980
+PRODUCT_BRAND := LGE
+PRODUCT_MODEL := LG-LS980
+PRODUCT_MANUFACTURER := lge
 
 endif

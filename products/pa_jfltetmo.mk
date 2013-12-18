@@ -14,7 +14,7 @@
 
 # Check for target product
 
-ifeq (pa_d2att,$(TARGET_PRODUCT))
+ifeq (pa_jfltetmo,$(TARGET_PRODUCT))
 
 # Define PA bootanimation size
 PARANOID_BOOTANIMATION_NAME := XHDPI
@@ -32,18 +32,14 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/d2att/full_d2att.mk)
+$(call inherit-product, device/samsung/jfltetmo/full_jfltetmo.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_d2att
-PRODUCT_DEVICE := d2att
+PRODUCT_NAME := pa_jfltetmo
+PRODUCT_DEVICE := jfltetmo
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SGH-I747
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=d2uc \
-    TARGET_DEVICE=d2att \
-    BUILD_FINGERPRINT="samsung/d2uc/d2att:4.1.1/JRO03L/I747UCDLK3:user/release-keys" \
-    PRIVATE_BUILD_DESC="d2uc-user 4.1.1 JRO03L I747UCDLK3 release-keys"
+PRODUCT_MODEL := SGH-M919
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltetmo TARGET_DEVICE=jfltetmo BUILD_FINGERPRINT="samsung/jfltetmo/jfltetmo:4.2.2/JDQ39/M919UVUAMDB:user/release-keys" PRIVATE_BUILD_DESC="jfltetmo-user 4.2.2 JDQ39 M919UVUAMDB release-keys"
 
 endif
