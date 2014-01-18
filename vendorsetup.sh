@@ -19,9 +19,10 @@ add_lunch_combo pa_jfltetmo-userdebug
 add_lunch_combo pa_jflteusc-userdebug
 add_lunch_combo pa_l900-userdebug
 add_lunch_combo pa_ls980-userdebug
-add_lunch_combo pa_m7ul-userdebug
+add_lunch_combo pa_m7-userdebug
 add_lunch_combo pa_n7000-userdebug
 add_lunch_combo pa_n7100-userdebug
 add_lunch_combo pa_mb526-userdebug
+add_lunch_combo pa_togari-userdebug
 add_lunch_combo pa_v500-userdebug
 add_lunch_combo pa_vs980-userdebug

@@ -75,8 +75,8 @@ endif
 ifeq (pa_ls980,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_ls980.mk
 endif
-ifeq (pa_m7ul,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_m7ul.mk
+ifeq (pa_m7,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_m7.mk
 endif
 ifeq (pa_n7000,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_n7000.mk
@@ -86,6 +86,9 @@ ifeq (pa_n7100,$(TARGET_PRODUCT))
 endif
 ifeq (pa_mb526,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_mb526.mk
+endif
+ifeq (pa_togari,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_togari.mk
 endif
 ifeq (pa_v500,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_v500.mk
