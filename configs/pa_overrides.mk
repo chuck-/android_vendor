@@ -16,9 +16,14 @@ PRODUCT_PACKAGES += \
     Busybox \
     Lightbulb \
 	lsof \
-	e2fsck \
-	mke2fs \
-	tune2fs 
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g \
+    e2fsck \
+    mke2fs \
+    tune2fs 
 
 # Source or prebuilt PA-prefs logic
 #ifneq ($(PREFS_FROM_SOURCE),true)
