@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2014 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,30 +13,28 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_jfltecri,$(TARGET_PRODUCT))
+ifeq (pa_n5110,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_tvdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
-
-# Inherit telephony common stuff
-$(call inherit-product, vendor/pa/configs/telephony.mk)
 
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/jfltecri/full_jfltecri.mk)
+$(call inherit-product, device/samsung/n5110/full_n5110.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_jfltecri
-PRODUCT_DEVICE := jfltecri
+PRODUCT_NAME := pa_n5110
+PRODUCT_DEVICE := n5110
 PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SCH-R970C
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltecri TARGET_DEVICE=jfltecri BUILD_FINGERPRINT="samsung/jfltecri/jfltecri:4.2.2/JDQ39/R970CVVUAME4:user/release-keys" PRIVATE_BUILD_DESC="jfltecri-user 4.2.2 JDQ39 R970CVVUAME4 release-keys"
+PRODUCT_MANUFACTURER := Samsung
+PRODUCT_MODEL := GT-N5110
 
+# Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=konawifixx TARGET_DEVICE=konawifi BUILD_FINGERPRINT="samsung/konawifixx/konawifi:4.2.2/JDQ39/N5110XXCMG2:user/release-keys" PRIVATE_BUILD_DESC="konawifixx-user 4.2.2 JDQ39 N5110XXCMG2 release-keys"
+    
 endif

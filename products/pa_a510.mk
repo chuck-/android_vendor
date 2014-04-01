@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2012 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,11 +13,10 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_jflteusc,$(TARGET_PRODUCT))
+ifeq (pa_a510,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_mdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
@@ -25,18 +24,18 @@ PREFS_FROM_SOURCE ?= false
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
 
-# Include AOSPA common configuration
+# Include ParanoidAndroid common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/jflteusc/full_jflteusc.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/acer/a510/full_a510.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_jflteusc
-PRODUCT_DEVICE := jflteusc
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SCH-R970
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jflteusc TARGET_DEVICE=jflteusc BUILD_FINGERPRINT="samsung/jflteusc/jflteusc:4.2.2/JDQ39/R970VXUAMD9:user/release-keys" PRIVATE_BUILD_DESC="jflteusc-user 4.2.2 JDQ39 R970VXUAMD9 release-keys"
+PRODUCT_NAME := pa_a510
+PRODUCT_DEVICE := a510
+PRODUCT_BRAND := Acer
+PRODUCT_MODEL := A510
+PRODUCT_MANUFACTURER := acer
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=a510_pa_cus1 TARGET_DEVICE=picasso_m BUILD_FINGERPRINT="acer/a510_pa_cus1/picasso_m:4.1.2/JZO54K/1354108731:user/release-keys" PRIVATE_BUILD_DESC="a510_pa_cus1-user 4.1.2 JZ054K 1354108731 release-keys"
 
 endif

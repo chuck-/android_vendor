@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2014 ParanoidSaberDroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
 
 # Check for target product
 
-ifeq (pa_i605,$(TARGET_PRODUCT))
+ifeq (pa_i9500,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := pa_xhdpi
 
 # Build paprefs from sources
-PREFS_FROM_SOURCE ?= true
+PREFS_FROM_SOURCE ?= false
 
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
@@ -29,18 +29,14 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/i605/full_i605.mk)
+$(call inherit-product, device/samsung/i9500/full_i9500.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := i605
-PRODUCT_NAME := pa_i605
+# Override AOSP build properties
+PRODUCT_NAME := pa_i9500
+PRODUCT_DEVICE := i9500
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SCH-I605
 PRODUCT_MANUFACTURER := samsung
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
-
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0ltevzw TARGET_DEVICE=t0ltevzw BUILD_FINGERPRINT="Verizon/t0ltevzw/t0ltevzw:4.3/JSS15J/I605VRUEMJ9:user/release-keys" PRIVATE_BUILD_DESC="t0ltevzw-user 4.3 JSS15J I605VRUEMJ9 release-keys"
+PRODUCT_MODEL := GT-I9500
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=ja3gxx TARGET_DEVICE=ja3g BUILD_FINGERPRINT="samsung/ja3gxx/ja3g:4.4.2/KOT49H/I9500XXUFNB3:user/release-keys" PRIVATE_BUILD_DESC="ja3gxx-user 4.4.2 KOT49H I9500XXUFNB3 release-keys"
 
 endif

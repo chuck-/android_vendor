@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2012 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,14 +13,13 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_i605,$(TARGET_PRODUCT))
+ifeq (pa_skyrocket,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_skyrocket
 
 # Build paprefs from sources
-PREFS_FROM_SOURCE ?= true
+PREFS_FROM_SOURCE ?= false
 
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
@@ -28,19 +27,15 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/i605/full_i605.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/samsung/skyrocket/full_skyrocket.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := i605
-PRODUCT_NAME := pa_i605
+# Override AOSP build properties
+PRODUCT_NAME := pa_skyrocket
+PRODUCT_DEVICE := skyrocket
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SCH-I605
-PRODUCT_MANUFACTURER := samsung
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
-
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0ltevzw TARGET_DEVICE=t0ltevzw BUILD_FINGERPRINT="Verizon/t0ltevzw/t0ltevzw:4.3/JSS15J/I605VRUEMJ9:user/release-keys" PRIVATE_BUILD_DESC="t0ltevzw-user 4.3 JSS15J I605VRUEMJ9 release-keys"
+PRODUCT_MANUFACTURER := Samsung
+PRODUCT_MODEL := SGH-I727
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-I727 TARGET_DEVICE=SGH-I727 BUILD_FINGERPRINT="samsung/SGH-I727/SGH-I727:4.1.2/JZO54K/I727UCMC1:user/release-keys" PRIVATE_BUILD_DESC="SGH-I727-user 4.1.2 JZO54K I727UCMC1 release-keys"
 
 endif

@@ -13,30 +13,29 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_jfltecan,$(TARGET_PRODUCT))
+ifeq (pa_flo,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_flo
 
 # Build paprefs from sources
-PREFS_FROM_SOURCE ?= false
+PREFS_FROM_SOURCE ?= true
 
-# Inherit telephony common stuff
-$(call inherit-product, vendor/pa/configs/telephony.mk)
-
-# Include AOSPA common configuration
+# Include ParanoidAndroid common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/jfltecan/full_jfltecan.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/asus/flo/full_flo.mk)
+
+# Include ParanoidAndroid bootanimation
+PRODUCT_COPY_FILES += \
+        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_jfltecan
-PRODUCT_DEVICE := jfltecan
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SGH-I337M
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltevl TARGET_DEVICE=jfltecan BUILD_FINGERPRINT="samsung/jfltevl/jfltecan:4.2.2/JDQ39/I337MVLUAMDJ:user/release-keys" PRIVATE_BUILD_DESC="jfltevl-user 4.2.2 JDQ39 I337MVLUAMDJ release-keys"
+PRODUCT_NAME := pa_flo
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus 7
+PRODUCT_MANUFACTURER := Asus
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razor BUILD_FINGERPRINT="google/razor/flo:4.4.2/KOT49H/937116:user/release-keys" PRIVATE_BUILD_DESC="razor-user 4.4 KOT49H 937116 release-keys"
 
 endif

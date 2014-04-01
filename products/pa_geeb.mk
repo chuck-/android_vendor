@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +14,7 @@
 
 # Check for target product
 
-ifeq (pa_d2tmo,$(TARGET_PRODUCT))
+ifeq (pa_geeb,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := pa_xhdpi
@@ -29,18 +29,15 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/d2tmo/full_d2tmo.mk)
+$(call inherit-product, device/lge/geeb/full_geeb.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_d2tmo
-PRODUCT_DEVICE := d2tmo
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SGH-T999
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=d2uc \
-    TARGET_DEVICE=d2tmo \
-    BUILD_FINGERPRINT="samsung/d2uc/d2att:4.1.2/JZO54K/T999UVDMD5:user/release-keys" \
-    PRIVATE_BUILD_DESC="d2uc-user 4.1.2 JZO54K T999UVDMD5 release-keys"
+PRODUCT_NAME := pa_geeb
+PRODUCT_DEVICE := geeb
+PRODUCT_BRAND := LGE
+PRODUCT_MANUFACTURER := LGE
+PRODUCT_MODEL := Optimus G
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=geeb BUILD_FINGERPRINT="lge/gee/geeb:4.4.2/KOT49H/937116:user/release-keys" PRIVATE_BUILD_DESC="gee-user 4.4.2 KOT49H 937116 release-keys"
 
 endif

@@ -13,8 +13,7 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_d2att,$(TARGET_PRODUCT))
+ifeq (pa_moto_msm8960,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := pa_xhdpi
@@ -28,19 +27,14 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/d2att/full_d2att.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/motorola/moto_msm8960/full_moto_msm8960.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_d2att
-PRODUCT_DEVICE := d2att
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SGH-I747
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=d2uc \
-    TARGET_DEVICE=d2att \
-    BUILD_FINGERPRINT="samsung/d2uc/d2att:4.1.1/JRO03L/I747UCDLK3:user/release-keys" \
-    PRIVATE_BUILD_DESC="d2uc-user 4.1.1 JRO03L I747UCDLK3 release-keys"
+PRODUCT_DEVICE := moto_msm8960
+PRODUCT_NAME := pa_moto_msm8960
+PRODUCT_BRAND := motorola
+PRODUCT_MODEL := xt926
+PRODUCT_MANUFACTURER := motorola
 
 endif

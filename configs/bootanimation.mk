@@ -12,114 +12,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Add PA bootanimation based on device resolution
-ifeq (pa_d2att,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_d2spr,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_d2tmo,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_d2vzw,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_d800,$(TARGET_PRODUCT))
+
+# Add PA bootanimation based on xxhdpi xhdpi hdpi tvdpi resolution
+
+
+# PA XXHDPI Devices
+ifneq ($(filter pa_d800 pa_d801 pa_d802 pa_d803 pa_dlx pa_hlte pa_i9500 pa_jflte pa_ls980 pa_m7 pa_odin pa_vs980 pa_yuga,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
 endif
-ifeq (pa_d801,$(TARGET_PRODUCT))
+
+# PA XHDPI Devices
+ifneq ($(filter pa_enrc2b pa_meliusltexx pa_evita pa_moto_msm8960 pa_moto_msm8960dt pa_d2lte pa_gee pa_geeb pa_hercules pa_i605 pa_i9300 pa_l900 pa_n7000 pa_n7100 pa_p880 pa_skyrocket pa_togari pa_v500,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
+        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
 endif
-ifeq (pa_d802,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_d803,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_galaxysmtd,$(TARGET_PRODUCT))
+
+# PA HDPI Devices
+ifneq ($(filter pa_a510 pa_a700 pa_galaxysmtd pa_i9100,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/bootanimation/800x480.zip:system/media/bootanimation.zip
 endif
-ifeq (pa_hercules,$(TARGET_PRODUCT))
+
+# PA TVDPI Devices
+ifneq ($(filter pa_n5110 pa_n5100,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_i605,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_i9300,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jflteatt,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jfltecan,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jfltecri,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jfltecsp,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jfltespr,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jfltetmo,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_jflteusc,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_l900,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_ls980,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_m7,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_n7000,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_n7100,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_togari,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_v500,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
-endif
-ifeq (pa_vs980,$(TARGET_PRODUCT))
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
+        vendor/pa/prebuilt/bootanimation/1920x1200.zip:system/media/bootanimation.zip
 endif
 ifeq (pa_mb526,$(TARGET_PRODUCT))
     PRODUCT_COPY_FILES += \

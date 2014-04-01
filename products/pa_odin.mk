@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2014 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,14 +13,13 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_i605,$(TARGET_PRODUCT))
+ifeq (pa_odin,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := pa_xhdpi
 
 # Build paprefs from sources
-PREFS_FROM_SOURCE ?= true
+PREFS_FROM_SOURCE ?= false
 
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
@@ -29,18 +28,14 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/i605/full_i605.mk)
+$(call inherit-product, device/sony/odin/full_odin.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := i605
-PRODUCT_NAME := pa_i605
-PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SCH-I605
-PRODUCT_MANUFACTURER := samsung
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
-
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0ltevzw TARGET_DEVICE=t0ltevzw BUILD_FINGERPRINT="Verizon/t0ltevzw/t0ltevzw:4.3/JSS15J/I605VRUEMJ9:user/release-keys" PRIVATE_BUILD_DESC="t0ltevzw-user 4.3 JSS15J I605VRUEMJ9 release-keys"
-
+# Override AOSP build properties
+PRODUCT_NAME := pa_odin
+PRODUCT_DEVICE := odin
+PRODUCT_BRAND := sony
+PRODUCT_MANUFACTURER := Sony
+PRODUCT_MODEL := Xperia ZL
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=C6503 TARGET_DEVICE=odin BUILD_FINGERPRINT=Sony/C6503_1271-0336/C6503:4.2.2/10.3.A.0.423/WP5_rg:user/release-keys PRIVATE_BUILD_DESC="C6503-user 4.2.2 10.3.A.0.423 WP5_rg test-keys"
+    
 endif

@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2012 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,11 +13,10 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_ls980,$(TARGET_PRODUCT))
+ifeq (pa_a700,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_g2
+OVERLAY_TARGET := pa_hdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
@@ -25,19 +24,18 @@ PREFS_FROM_SOURCE ?= false
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
 
-# Include AOSPA common configuration
+# Include ParanoidAndroid common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/lge/ls980/ls980.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/acer/a700/full_a700.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := ls980
-PRODUCT_NAME := pa_ls980
-PRODUCT_BRAND := LGE
-PRODUCT_MODEL := LG-LS980
-PRODUCT_MANUFACTURER := lge
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=ls980 BUILD_FINGERPRINT=lge/g2_spr_us/g2:4.2.2/JDQ39B/LS980ZV7.1378543552:user/release-keys PRIVATE_BUILD_DESC="g2_spr-user 4.2.2 JDQ39B LS980ZV7.1378543552 release-keys"
+# Override AOSP build properties
+PRODUCT_NAME := pa_a700
+PRODUCT_DEVICE := a700
+PRODUCT_BRAND := Acer
+PRODUCT_MODEL := A700
+PRODUCT_MANUFACTURER := acer
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=a700_emea_cus1 TARGET_DEVICE=picasso_mf BUILD_FINGERPRINT="acer/a700_emea_cus1/picasso_mf:4.0.4/IMM76D/1337332281:user/release-keys" PRIVATE_BUILD_DESC="a700_emea_cus1-user 4.0.4 IMM76D 1337332281 release-keys"
 
 endif
