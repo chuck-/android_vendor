@@ -16,15 +16,16 @@
 PRODUCT_PACKAGES += \
     Busybox \
     Lightbulb \
-	lsof \
-    mount.exfat \
+    e2fsck \
     fsck.exfat \
+    lsof \
+    mke2fs \
     mkfs.exfat \
+    mount.exfat \
+    tune2fs \
     ntfsfix \
     ntfs-3g \
-    e2fsck \
-    mke2fs \
-    tune2fs 
+    mkntfs
 
 # Extra packages
 PRODUCT_PACKAGES += \
