@@ -42,7 +42,7 @@ PRODUCT_PACKAGES := \
     su
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1 \
+    ro.build.selinux=0 \
     persist.sys.root_access=3
 
 # CM Hardware Abstraction Framework
