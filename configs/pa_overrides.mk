@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# PA packages
 PRODUCT_PACKAGES += \
     Busybox \
     Lightbulb \
@@ -30,7 +29,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ScreenRecorder \
     libscreenrecorder
-
 # Source or prebuilt PA-prefs logic
 #ifneq ($(PREFS_FROM_SOURCE),true)
 #    PRODUCT_COPY_FILES += \
@@ -50,8 +48,3 @@ PRODUCT_PACKAGES += \
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.pa.device=$(DEVICE)
-
-# Allow override of system DUN
-# 2 = not set, 0 = DUN not required, 1 = DUN required
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dun.override=0

@@ -32,9 +32,16 @@ PRODUCT_NAME := pa_jem
 PRODUCT_DEVICE := jem
 PRODUCT_RELEASE_NAME := KindleFireHD
 PRODUCT_BRAND := google
+<<<<<<< HEAD
 PRODUCT_MODEL := Amazon jem
 PRODUCT_MANUFACTURER := android
 
+=======
+PRODUCT_MODEL := Amazon Jem
+PRODUCT_MANUFACTURER := android
+
+# Set build fingerprint / ID / Product Name ect.
+>>>>>>> a6ed21b01f91f81be93fafed38e58ec08d00b100
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jem TARGET_DEVICE=jem
 
 endif
