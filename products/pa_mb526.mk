@@ -31,7 +31,7 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit AOSP device configuration
-$(call inherit-product, device/moto/mb526/full_jordan.mk)
+$(call inherit-product, device/moto/mb526/full_mb526.mk)
 
 # Override AOSP build properties
 DEVICE_PACKAGE_OVERLAYS += device/moto/mb526/overlay
