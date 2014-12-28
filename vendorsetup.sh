@@ -41,7 +41,7 @@ add_lunch_combo pa_n5110-userdebug
 add_lunch_combo pa_n5120-userdebug
 add_lunch_combo pa_n7000-userdebug
 add_lunch_combo pa_n7100-userdebug
-add_lunch_combo pa_mb526-userdebug
+add_lunch_combo pa_mb52x-userdebug
 add_lunch_combo pa_nozomi-userdebug
 add_lunch_combo pa_odin-userdebug
 add_lunch_combo pa_p3100-userdebug
