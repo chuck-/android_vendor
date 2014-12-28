@@ -13,10 +13,11 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (pa_odin,$(TARGET_PRODUCT))
+
+ifeq (pa_hlte,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_xxhdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
@@ -28,14 +29,14 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/sony/odin/full_odin.mk)
+$(call inherit-product, device/samsung/hlte/hlte.mk)
 
-# Override AOSP build properties
-PRODUCT_NAME := pa_odin
-PRODUCT_DEVICE := odin
-PRODUCT_BRAND := sony
-PRODUCT_MANUFACTURER := Sony
-PRODUCT_MODEL := Xperia ZL
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=C6503 TARGET_DEVICE=odin BUILD_FINGERPRINT=Sony/C6503/C6503:4.4.4/10.5.1.A.0.283/5P53rQ:user/release-keys PRIVATE_BUILD_DESC="C6503-user 4.4.4 10.5.1.A.0.283 5P53rQ test-keys"
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := hlte
+PRODUCT_NAME := pa_hlte
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := hlte
+PRODUCT_MANUFACTURER := samsung
 
 endif
+
